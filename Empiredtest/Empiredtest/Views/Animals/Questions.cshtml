@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Empiredtest.Animal>
+
+@{
+    ViewBag.Title = "Questions";
+}
+@using (Html.BeginForm("Questions", "Animals", FormMethod.Post))
+{ 
+
+
+<div class="container">
+    <h2> Answer the below questions</h2>
+    <div>
+        
+        <table>
+            <tr>
+                <td>
+                    Does the animal has
+                </td>
+               
+                  
+                    @foreach (var item in Model)
+                        {
+                            <td>
+                                      
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"
+                                               name="checkparts"
+                                                value="@item.Parts" />@item.Parts 
+                                        </label>
+                                    </div>
+                            </td>
+                        
+                        }              
+                
+            </tr>
+
+            <tr>
+                <td>
+                    Does the animal 
+                </td>
+
+
+                @foreach (var item in Model)
+                {
+                    <td>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       name="checksound"
+                                       value="@item.Sound" />@item.Sound
+                                </label>
+                            </div>
+                        </td>
+
+                }
+
+            </tr>
+            <tr>
+                <td>
+                    What is the color of the animal
+                </td>
+
+
+                @foreach (var item in Model)
+                {
+                    <td>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       name="checkcolor"
+                                       value="@item.Color" />@item.Color
+                                </label>
+                            </div>
+                        </td>
+
+                }
+
+            </tr>
+
+
+
+        </table>
+        <div>
+            <input type="submit" id="result"class="btn btn-primary" value="View the result" />
+        </div>
+        
+    </div>
+    
+
+</div>
+}
+
+

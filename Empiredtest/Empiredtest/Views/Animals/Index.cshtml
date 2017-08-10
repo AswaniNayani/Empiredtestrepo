@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Empiredtest.Animal>
+
+          
+
+
+   <div class="container">
+       <h2> Choose the animal</h2>
+    
+       <div class="row col-md-3">
+           <table class="table table-bordered table-sm table-striped">
+               <thead>
+                   <tr>
+                       <th> Animals </th>
+                   </tr>
+               </thead>
+               @foreach (var item in Model)
+               {
+                   <tbody>
+                       <tr>
+                           <td>@item.Name</td>
+                       </tr>
+
+                   </tbody>
+               }
+           </table>
+       </div>
+       
+    </div>          
+       
+    
+<div id="next">
+    <table border="0" width="275">
+        <tr>
+            <td align ="left">
+                <input type="button" class="btn btn-primary" value="Add Animal" onclick="location.href='@Url.Action("Add", "Animals")'" />
+            </td>
+            <td align="right">
+                <input type="button" class="btn btn-primary" value="Next" onclick="location.href='@Url.Action("Questions", "Animals")'" />
+            </td>
+        </tr>
+    </table>
+
+    
+</div>
+
+
+
+
+
